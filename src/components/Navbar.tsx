@@ -1,28 +1,23 @@
 import { Link } from "react-router-dom";
 
+import { NAV_LINKS } from "../constants";
+
 function Navbar() {
-  const nav_links = [
-    { name: "00 HOME", to: "/" },
-    { name: "00 DESTINATION", to: "/destination" },
-    { name: "00 CREW", to: "/crew" },
-    { name: "00 TECHNOLOGY", to: "/technology" },
-  ];
   return (
-    <nav style={{ zIndex: 10 }}>
-      <div
-        className="logo"
-        style={{
-          width: "100%",
-          padding: "10px 25px",
-        }}
-      >
+    <nav>
+      <div className="logo">
         <img src="/assets/shared/logo.svg" alt="space-tourism-logo" />
       </div>
-      <div className="line"></div>
+      <div className="line">
+        <img src="/assets/shared/line.png" alt="space-tourism-logo" />
+      </div>
       <ul>
-        {nav_links.map(({ name, to }) => (
-          <li key={name}>
-            <Link to={to}>{name}</Link>
+        {NAV_LINKS.map(({ name, to }) => (
+          <li key={name} style={{ listStyle: "none" }}>
+            <Link to={to}>
+              <span style={{ fontWeight: "bold" }}>{name.split(" ")[0]}</span>{" "}
+              {name.split(" ")[1]}
+            </Link>
           </li>
         ))}
       </ul>
