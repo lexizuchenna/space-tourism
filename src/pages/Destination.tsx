@@ -1,34 +1,64 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 
-{
-  /*
-  "name": "Moon",
-  "images": {
-    "png": "./assets/destination/image-moon.png",
-    "webp": "./assets/destination/image-moon.webp"
-  },
-  "description": "See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.",
-  "distance": "384,400 km",
-  "travel": "3 days"
-*/
-}
+import { DATA } from "../constants";
+import { Desination } from "../types";
 
 function Destination() {
+  const destinations = DATA.destinations;
+  const [data, setData] = useState<Desination>(destinations[0]);
+
+  const handleTab = (data: Desination) => setData(data);
+
+  const infos = [
+    { name: "AVG. DISTANCE", value: data.distance },
+    { name: "EST. TRAVEL TIME", value: data.travel },
+  ];
+
   return (
     <Fragment>
-      <main className="home">
+      <main className="destination">
         <div className="contents">
-          <div className="text-content" style={{ width: "50%" }}>
-            <h3>So, you want to travel to </h3>
-            <h2>Space</h2>
-            <p>
-              Let’s face it; if you want to go to space, you might as well
-              genuinely go to outer space and not hover kind of on the edge of
-              it. Well sit back, and relax because we’ll give you a truly out of
-              this world experience!
-            </p>
+          <h3>
+            <span>01</span> Pick your destination
+          </h3>
+          <div className="main-content">
+            <div className="image" style={{ width: "50%", height: "400px" }}>
+              <img
+                style={{ width: "380px", height: "100%" }}
+                src={data.images.webp}
+                alt={data.name}
+              />
+            </div>
+            <div className="text-content" style={{ width: "445px" }}>
+              <div className="tabs">
+                {destinations.map((d) => (
+                  <button
+                    key={d.name}
+                    className={`tab ${d.name === data.name && "active"}`}
+                    type="button"
+                    onClick={() => handleTab(d)}
+                  >
+                    {d.name}
+                  </button>
+                ))}
+              </div>
+              <h1>{data.name}</h1>
+              <p className="desc">{data.description}</p>
+              <img
+                src="/assets/destination/line.png"
+                alt=""
+                style={{ margin: "40px 0" }}
+              />
+              <div className="infos">
+                {infos.map(({ name, value }) => (
+                  <div className="info">
+                    <h4>{name}</h4>
+                    <p>{value}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-          <div className="circle-white">Explore</div>
         </div>
       </main>
     </Fragment>

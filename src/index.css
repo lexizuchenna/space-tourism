@@ -44,15 +44,34 @@ nav ul {
   backdrop-filter: blur(3px);
 }
 
+nav ul li {
+  list-style: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid transparent;
+}
+
+nav ul li:hover {
+  border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+nav ul li.active {
+  border-bottom: 3px solid white;
+}
+
 nav ul li a {
   font-family: var(--font-sub2);
   color: white;
   font-size: 16px;
   text-decoration: none;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  gap: 4px;
 }
 
-main.home {
-  background-image: url("/assets/home/background-home-desktop.jpg");
+main {
   position: absolute;
   inset: 0px;
   background-size: cover;
@@ -60,6 +79,9 @@ main.home {
   background-position: center center;
   z-index: 5;
   display: flex;
+}
+main.home {
+  background-image: url("/assets/home/background-home-desktop.jpg");
   justify-content: center;
   align-items: end;
 }
@@ -107,4 +129,216 @@ main.home p {
   font-family: var(--font-main);
   font-size: 32px;
   text-transform: uppercase;
+}
+
+main.destination {
+  background-image: url("/assets/destination/background-destination-desktop.jpg");
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+}
+
+.destination .contents,
+.crew .contents,
+.technology .contents {
+  min-width: 1110px;
+  color: rgb(255, 255, 255);
+  padding: 20px 0px;
+}
+
+.contents h3 {
+  font-family: var(--font-sub2);
+  font-size: 28px;
+  letter-spacing: 4.72px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.contents h3 span {
+  color: rgba(255, 255, 255, 0.25);
+  font-weight: bold;
+}
+
+main .main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.main-content .tabs {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+button.tab {
+  font-family: var(--font-sub2);
+  font-weight: 400;
+  background-color: transparent;
+  outline: none;
+  border: none;
+
+  border-bottom: 3px solid transparent;
+  text-transform: uppercase;
+  font-size: 16px;
+  display: block;
+  color: #fff;
+  padding-bottom: 8px;
+  cursor: pointer;
+}
+
+main.destination button.tab:hover {
+  border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+main.destination button.tab.active {
+  border-bottom: 3px solid #fff;
+}
+
+.destination h1 {
+  font-family: var(--font-main);
+  font-weight: 400;
+  font-size: 100px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.destination .desc {
+  font-family: var(--font-sub1);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 180%;
+}
+
+.destination .infos {
+  display: flex;
+  justify-content: space-between;
+}
+
+.infos .info h4 {
+  font-family: var(--font-sub2);
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: rgb(208, 214, 249);
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+.infos .info p {
+  font-family: var(--font-main);
+  font-size: 28px;
+  text-transform: uppercase;
+}
+
+main.crew {
+  background-image: url("/assets/crew/background-crew-desktop.jpg");
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+}
+
+main.crew .main-content {
+  justify-content: start;
+  gap: 50;
+  width: 100%;
+}
+
+main.crew .text-content {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  height: 450px;
+  font-weight: 400;
+  font-family: var(--font-main);
+}
+
+.crew .text-content h1 {
+  text-transform: uppercase;
+  font-size: 56px;
+}
+.crew .text-content h2 {
+  font-size: 32px;
+  margin-bottom: 16px;
+  opacity: 0.5042;
+  text-transform: uppercase;
+}
+.crew .text-content p {
+  margin-top: 24px;
+  font-family: var(--font-sub1);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 180%;
+}
+
+main.crew .tabs {
+  margin-bottom: 0px;
+  position: absolute;
+  bottom: 0px;
+}
+
+main.crew button.tab {
+  background-color: white;
+  opacity: 0.1744;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  padding-bottom: 0;
+}
+
+main.crew button.tab:hover {
+  opacity: 0.5;
+}
+
+main.crew button.tab.active {
+  opacity: 1;
+}
+
+main.technology {
+  background-image: url("/assets/technology/background-technology-desktop.jpg");
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+}
+
+main.technology .main-content {
+  justify-content: space-between;
+  gap: 32px;
+  width: 100%;
+}
+main.technology .text-content {
+  width: 610px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 450px;
+  gap: 50px;
+}
+main.technology .tabs {
+  flex-direction: column;
+  margin-bottom: 0px;
+  justify-content: space-between;
+}
+
+main.technology button.tab {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  font-family: var(--font-main);
+  font-size: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 0;
+}
+
+main.technology button.tab:hover {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+main.technology button.tab.active {
+  background-color: #fff;
+  color: #000;
 }
