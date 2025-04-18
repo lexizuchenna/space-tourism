@@ -12,14 +12,17 @@
   box-sizing: border-box;
 }
 
+/* ?? Nav */
+
 nav {
   z-index: 10;
-  position: relative;
-  inset: 0;
+  position: fixed;
   display: flex;
   align-items: center;
-  top: 20;
-  margin-top: 30px;
+  top: 40px;
+  right: 0;
+  left: 0;
+  width: 100%;
 }
 
 .logo {
@@ -31,6 +34,11 @@ nav {
   margin-right: -30px;
   z-index: 5;
   margin-top: -10px;
+}
+
+nav .menu,
+nav .close-icon {
+  display: none;
 }
 
 nav ul {
@@ -71,15 +79,20 @@ nav ul li a {
   gap: 4px;
 }
 
+/* !! Nav */
+
 main {
-  position: absolute;
-  inset: 0px;
+  background-attachment: fixed;
+  width: 100%;
+  min-height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  z-index: 5;
   display: flex;
 }
+
+/* ?? Home */
+
 main.home {
   background-image: url("/assets/home/background-home-desktop.jpg");
   justify-content: center;
@@ -90,6 +103,10 @@ main.home .contents {
   display: flex;
   justify-content: space-around;
   margin-bottom: 60px;
+}
+
+main.home .contents .text-content {
+  width: 50%;
 }
 
 main.home h3 {
@@ -131,6 +148,10 @@ main.home p {
   text-transform: uppercase;
 }
 
+/* !! Home */
+
+/* ?? Destintion */
+
 main.destination {
   background-image: url("/assets/destination/background-destination-desktop.jpg");
   justify-content: center;
@@ -163,6 +184,20 @@ main .main-content {
   justify-content: center;
   align-items: center;
   gap: 30px;
+}
+
+main.destination .image {
+  width: 50%;
+  height: 400px;
+}
+
+main.destination .image img {
+  width: 380px;
+  height: 380px;
+}
+
+div.main-content div.text-content {
+  width: 445px;
 }
 
 .main-content .tabs {
@@ -229,6 +264,10 @@ main.destination button.tab.active {
   text-transform: uppercase;
 }
 
+/* !! Destination */
+
+/* ?? Crew */
+
 main.crew {
   background-image: url("/assets/crew/background-crew-desktop.jpg");
   justify-content: center;
@@ -238,7 +277,7 @@ main.crew {
 
 main.crew .main-content {
   justify-content: start;
-  gap: 50;
+  gap: 50px;
   width: 100%;
 }
 
@@ -256,12 +295,16 @@ main.crew .text-content {
 .crew .text-content h1 {
   text-transform: uppercase;
   font-size: 56px;
+  font-family: var(--font-main);
+  font-weight: 400;
 }
 .crew .text-content h2 {
   font-size: 32px;
   margin-bottom: 16px;
   opacity: 0.5042;
   text-transform: uppercase;
+  font-family: var(--font-main);
+  font-weight: 400;
 }
 .crew .text-content p {
   margin-top: 24px;
@@ -294,6 +337,14 @@ main.crew button.tab.active {
   opacity: 1;
 }
 
+main.crew .image {
+  width: 50%;
+}
+
+/* !! Crew */
+
+/* ?? Technology */
+
 main.technology {
   background-image: url("/assets/technology/background-technology-desktop.jpg");
   justify-content: center;
@@ -307,7 +358,7 @@ main.technology .main-content {
   width: 100%;
 }
 main.technology .text-content {
-  width: 610px;
+  width: 610px !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -341,4 +392,400 @@ main.technology button.tab:hover {
 main.technology button.tab.active {
   background-color: #fff;
   color: #000;
+}
+
+main.technology h2 {
+  font-family: var(--font-main);
+  font-weight: 400;
+  font-size: 32px;
+  margin-bottom: 16px;
+  opacity: 0.5042;
+  text-transform: uppercase;
+}
+
+main.technology h1 {
+  font-family: var(--font-main);
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 56px;
+}
+
+main.technology p.desc {
+  margin-top: 24px;
+  font-family: var(--font-sub1);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 180%;
+}
+
+main.technology .image {
+  width: 450px;
+}
+
+main.technology .image img {
+  width: 100%;
+}
+
+/* !! Technology */
+
+/* 
+? Tablet View
+*/
+
+@media (max-width: 768px) {
+  nav {
+    top: 0;
+    margin-top: 0;
+  }
+
+  .logo {
+    margin-right: 30px;
+  }
+
+  .line {
+    display: none;
+  }
+
+  nav ul {
+    justify-content: flex-end;
+    padding: 0px 40px;
+    width: unset;
+    gap: 48px;
+    flex: 1;
+  }
+
+  main.home {
+    background-image: url("/assets/home/background-home-tablet.jpg");
+    align-items: center;
+  }
+
+  main.home .contents {
+    align-items: center;
+    margin-bottom: 0px;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  main.home .contents .text-content {
+    width: 80%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  main.home h3 {
+    font-size: 24px;
+    margin: 0;
+  }
+
+  main.home h2 {
+    font-size: 100px;
+    margin: 24px 0;
+  }
+
+  main.home p {
+    font-size: 14px;
+  }
+
+  .circle-white {
+    width: 200px;
+    height: 200px;
+    font-size: 28px;
+  }
+
+  /* ? Destination */
+  main.destination {
+    background-image: url("/assets/destination/background-destination-tablet.jpg");
+  }
+
+  .destination .contents,
+  .crew .contents {
+    min-width: 100%;
+    padding: 20px 30px;
+  }
+
+  .contents h3 span {
+    color: rgba(255, 255, 255, 0.25);
+    font-weight: bold;
+  }
+
+  main.destination .main-content,
+  main.crew .main-content {
+    flex-direction: column;
+    padding: 20px 0;
+  }
+
+  main.destination .image {
+    width: 300px;
+    height: 300px;
+    margin: 20px 0;
+  }
+
+  main.destination .image img {
+    width: 100%;
+    height: 100%;
+  }
+
+  div.main-content div.text-content {
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    padding: 0 80px;
+  }
+
+  .destination h1 {
+    font-size: 80px;
+  }
+
+  .destination .desc {
+    font-size: 17px;
+    text-align: center;
+  }
+
+  .destination .infos {
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .infos .info h4 {
+    text-align: center;
+  }
+
+  .infos .info p {
+    text-align: center;
+  }
+
+  /* ?? Crew */
+
+  main.crew {
+    background-image: url("/assets/crew/background-crew-tablet.jpg");
+  }
+
+  main.crew .main-content {
+    justify-content: space-between;
+    padding-bottom: 0;
+  }
+
+  main.crew .main-content .text-content {
+    text-align: center;
+    height: unset;
+    margin-top: 40px;
+  }
+
+  main.crew .main-content .text-content div:first-child {
+    margin-bottom: 40px;
+  }
+
+  main.crew .image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* ?? Technology */
+
+  main.technology .main-content {
+    flex-direction: column-reverse;
+  }
+
+  main.technology .tabs {
+    flex-direction: row;
+  }
+
+  /* ?? Technology */
+  main.technology {
+    background-image: url("/assets/technology/background-technology-tablet.jpg");
+  }
+
+  .technology .contents {
+    min-width: 100%;
+    padding: 20px 0;
+  }
+
+  main.technology h3 {
+    margin-left: 30px;
+  }
+
+  main.technology .image {
+    width: 100%;
+    height: 357px;
+  }
+
+  main.technology .image img {
+    width: 100%;
+    height: 100%;
+    margin-top: 25px;
+  }
+
+  main.technology .text-content {
+    text-align: center;
+  }
+
+  main.technology div.text-content {
+    padding: 0;
+  }
+}
+
+@media (max-width: 430px) {
+  main.home {
+    background-image: url("/assets/home/background-home-mobile.jpg");
+  }
+  main.destination {
+    background-image: url("/assets/destination/background-destination-mobile.jpg");
+  }
+
+  main.crew {
+    background-image: url("/assets/crew/background-crew-mobile.jpg");
+  }
+
+  main.technology {
+    background-image: url("/assets/technology/background-technology-mobile.jpg");
+  }
+
+  nav {
+    justify-content: space-between;
+    margin-top: 24px;
+  }
+
+  nav ul {
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    width: 254px;
+    padding: 0;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 32px;
+    padding-left: 32px;
+    padding-top: 100px;
+    background-color: rgba(11, 13, 23, 0.75);
+    backdrop-filter: blur(40px);
+
+    visibility: hidden;
+  }
+
+  nav ul.active {
+    visibility: visible;
+  }
+
+  nav ul li,
+  nav ul li.active,
+  nav ul li:hover {
+    border: none;
+  }
+
+  nav ul li {
+    height: unset;
+  }
+
+  nav .menu {
+    display: block;
+    margin-right: 24px;
+  }
+
+  nav .close-icon {
+    display: block;
+    position: absolute;
+    right: 27px;
+    top: 33px;
+  }
+
+  .destination .contents,
+  .crew .contents {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 0;
+  }
+
+  .technology .contents {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+  }
+
+  div.main-content div.text-content {
+    padding: 0;
+  }
+
+  main.destination .image {
+    width: 140px;
+    height: 140px;
+    margin: 20px 0;
+  }
+
+  .contents h3 {
+    font-size: 20px;
+  }
+
+  button.tab {
+    font-size: 14px;
+  }
+
+  .destination .desc {
+    width: 100%;
+  }
+
+  .text-content img {
+    margin: 10px 0 !important;
+    width: 100%;
+  }
+
+  .crew .text-content h1,
+  .crew .text-content h2 {
+    font-size: 32px;
+  }
+
+  .crew .image {
+    width: 270px !important;
+  }
+
+  .crew img {
+    width: 100% !important;
+  }
+
+  .crew .text-content p {
+    font-size: 15px;
+  }
+
+  main.technology .text-content {
+    width: 100% !important;
+    padding: 0 24px !important;
+  }
+
+  main.technology button.tab {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  main.technology h3 {
+    padding-left: 25px;
+  }
+  main.technology h2 {
+    font-size: 24px;
+  }
+
+  main.technology h1 {
+    font-size: 40px;
+  }
+
+  main.technology p.desc {
+    font-size: 16px;
+  }
+
+  main.technology .image {
+    height: 258px;
+    width: 100%;
+  }
+
+  main.technology .image img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    width: 100%;
+  }
 }
