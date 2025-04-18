@@ -20,9 +20,9 @@ function Navbar() {
         <img src="/assets/shared/line.png" alt="space-tourism-logo" />
       </div>
       <ul className={showNav ? "active" : ""}>
-        <div className="close-icon" onClick={toggleNav}>
+        <span className="close-icon" onClick={toggleNav}>
           <img src="/assets/shared/icon-close.svg" alt="close-menu" />
-        </div>
+        </span>
         {NAV_LINKS.map(({ name, to }) => (
           <li
             key={name}

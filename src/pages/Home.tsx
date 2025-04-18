@@ -8,7 +8,7 @@ function Home() {
       <div className="contents">
         <div className="text-content">
           <h3>So, you want to travel to </h3>
-          <h2>Space</h2>
+          <h1>Space</h1>
           <p>
             Let’s face it; if you want to go to space, you might as well
             genuinely go to outer space and not hover kind of on the edge of it.
